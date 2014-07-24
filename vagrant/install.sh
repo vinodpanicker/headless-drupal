@@ -49,8 +49,20 @@ echo "Install Composer"
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 
+echo "Setup ruby"
+sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
+curl -L https://get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
+echo "source ~/.rvm/scripts/rvm" >> ~/.bashrc
+rvm install 2.1.2
+rvm use 2.1.2 --default
+ruby -v
+echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+sudo gem install sass
+sudo gem install compass
+
 echo "Setup Node"
 curl -sL https://deb.nodesource.com/setup | sudo bash -
 sudo apt-get -y install nodejs
-
 sudo npm install -g grunt-cli yo bower karma testem
+
