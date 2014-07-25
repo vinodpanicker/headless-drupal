@@ -18,7 +18,7 @@ echo "Install PHP"
 apt-get install -y php5
 
 echo "Install PHP dependencies"
-apt-get install -y apache2 libapache2-mod-php5 php5-curl php5-gd php5-mcrypt mysql-server-5.5 php5-mysql php5-json drush
+apt-get install -y apache2 libapache2-mod-php5 php5-curl php5-gd php5-mcrypt mysql-server-5.5 php5-mysql php5-json
 
 echo "Setup Xdebug"
 apt-get install -y php5-xdebug
@@ -66,3 +66,5 @@ curl -sL https://deb.nodesource.com/setup | sudo bash -
 sudo apt-get -y install nodejs
 sudo npm install -g grunt-cli yo bower karma testem
 
+echo "Drush"
+composer global require drush/drush:dev-master
